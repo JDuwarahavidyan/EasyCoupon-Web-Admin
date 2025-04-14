@@ -110,10 +110,11 @@ export default function QrCodeList() {
       (qrcode.id.toLowerCase() || "").includes(searchQuery.toLowerCase()) ||
       (qrcode.canteenName.toLowerCase() || "").includes(searchQuery.toLowerCase());
 
-    const matchesDateRange = selectedDateRange[0] && selectedDateRange[1]
+      const matchesDateRange = selectedDateRange[0] && selectedDateRange[1]
       ? new Date(qrcode.scannedAt) >= new Date(selectedDateRange[0]) &&
-        new Date(qrcode.scannedAt) <= new Date(selectedDateRange[1])
+        new Date(qrcode.scannedAt) <= new Date(new Date(selectedDateRange[1]).setHours(23, 59, 59, 999))
       : true;
+    
 
     return matchesRole && matchesSearch && matchesDateRange;
   });
@@ -132,7 +133,7 @@ export default function QrCodeList() {
   
     // Format the data to match the displayed table structure
     const formattedData = rowsToExport.map(qrcode => ({
-      ID: qrcode.id,
+      //ID: qrcode.id,
       "Student User Name": qrcode.studentName,
       "Canteen User Name": qrcode.canteenName,
       "Canteen Type": qrcode.canteenType,
@@ -143,16 +144,22 @@ export default function QrCodeList() {
       }),
     }));
   
-    // Get the current date and time for the file name
-    const now = new Date();
-    const formattedDate = now.toLocaleString('en-GB', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    }).replace(/[/:]/g, '-'); // Replace characters not allowed in file names
+    if (selectedDateRange[0] && selectedDateRange[1]) {
+      const start = new Date(selectedDateRange[0]).toLocaleDateString('en-GB').replace(/[/:]/g, '-');
+      const end = new Date(selectedDateRange[1]).toLocaleDateString('en-GB').replace(/[/:]/g, '-');
+      var formattedDate = `${start}_to_${end}`;
+    } else {
+      // fallback to current timestamp if date range not selected
+      const now = new Date();
+      formattedDate = now.toLocaleString('en-GB', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      }).replace(/[/:]/g, '-');
+    }
   
     const fileName = `Coupons_History_${formattedDate}.xlsx`;
   
