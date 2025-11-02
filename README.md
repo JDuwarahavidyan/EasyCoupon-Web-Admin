@@ -422,7 +422,7 @@ Gratitude also goes to all **canteen operators and students** who participated i
 
 ### 🏆 **Appreciation Post**
 🙏 See how our project was recognized and appreciated by faculty members and the Welfare Society.  
-👉 [View Appreciation Post](https://www.linkedin.com/posts/your-appreciation-post-link/)
+👉 [View Appreciation Post](https://www.linkedin.com/posts/duwarahavidyan-jeganathan-763b6a192_easycoupon-universityofruhuna-innovation-activity-7390787090575257600-7a8M?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC1g0bsBkCY5HOF6iQ3bbHqumfI0SOo0-Dk)
   
 
 ---
