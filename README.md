@@ -4,8 +4,7 @@
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/github/explore/main/topics/react/react.png" width="60" height="60" alt="React Logo">
-  <img src="https://raw.githubusercontent.com/github/explore/main/topics/nodejs/nodejs.png" width="60" height="60" alt="Node.js Logo">
-  <img src="https://raw.githubusercontent.com/github/explore/main/topics/firebase/firebase.png" width="60" height="60" alt="Firebase Logo">
+  
   <br>
   💻 <span style="color:#007acc">Easy Coupon Web Application</span> 💻  
 </h1>
